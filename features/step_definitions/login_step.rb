@@ -1,10 +1,7 @@
 Quando('eu faço login com {string} e {string}') do |email, senha|
-    visit '/'
-    sleep 1
-    find("#emailId").set email
-    find("#passId").set senha
-    click_button "Entrar"
-    sleep 3
+    @login = LoginPage.new
+    @login.go
+    @login.with(email, senha)
 end
   
 Entao('devo ser autenticado') do
