@@ -13,4 +13,8 @@ class LoginPage
         sleep 2
     end
 
+    def alert
+        find(".alert").text
+    end
+
 end
