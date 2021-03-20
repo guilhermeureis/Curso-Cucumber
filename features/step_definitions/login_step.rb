@@ -1,12 +1,15 @@
+# Com o page object o arquivos "steps"
+# Ficou mais limpa, simples e objetiva
+# Uma step definition não deve conter tanta lógica assim. Ele tem que ser pequena e muito simples.
+# Usar o mínimo de lógica
+
 Quando('eu faço login com {string} e {string}') do |email, senha|
     @login.go
     @login.with(email, senha)
 end
   
 Entao('devo ser autenticado') do
-    js_script = 'return window.localStorage.getItem("default_auth_token");'
-    token = page.execute_script(js_script)
-    expect(token.length).to be 147
+    expect(get_token.length).to be 147
 end
   
 Entao('devo ver {string} na área logada') do |expect_name|
@@ -14,9 +17,7 @@ Entao('devo ver {string} na área logada') do |expect_name|
 end
 
 Entao('não devo ser autenticado') do
-    js_script = 'return window.localStorage.getItem("default_auth_token");'
-    token = page.execute_script(js_script)
-    expect(token).to be nil
+    expect(get_token).to be nil
 end
   
 Entao('devo ver a mensagem de alerta {string}') do |expect_message|
