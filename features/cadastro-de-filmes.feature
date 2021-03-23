@@ -1,5 +1,5 @@
 #language: pt
-
+@login
 Funcionalidade: Cadastro de filmes
     Para que eu possa disponibilizar novos títulos no catálogo
     Sendo um gestor de catálogo
@@ -9,7 +9,7 @@ Funcionalidade: Cadastro de filmes
     Esquema do Cenario: Novo filme
         O gestor de catálogo cadastrar um novo filme através do fomrulário
         e um novo regitro é inserido no catálogo Ninjaflix.
-        
+
         Dado que <codigo> é um novo filme
         Quando eu faço o cadastro deste filme
         Entao devo ver o novo filme na lista

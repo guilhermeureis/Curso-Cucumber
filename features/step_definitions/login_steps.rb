@@ -4,8 +4,8 @@
 # Usar o mínimo de lógica
 
 Quando('eu faço login com {string} e {string}') do |email, senha|
-    @login.go
-    @login.with(email, senha)
+    @login_page.go
+    @login_page.with(email, senha)
 end
   
 Entao('devo ser autenticado') do
@@ -21,6 +21,6 @@ Entao('não devo ser autenticado') do
 end
   
 Entao('devo ver a mensagem de alerta {string}') do |expect_message|
-    expect(@login.alert).to eql expect_message    
+    expect(@login_page.alert).to eql expect_message    
 end
   
