@@ -16,3 +16,7 @@ Entao('devo ver o novo filme na lista') do
     expect(page).to have_text @movie["title"]
     expect(page).to have_text @movie["status"]
 end
+
+Entao('devo ver a notificação {string}') do |expect_alert|
+    expect(@movie_page.alert).to eql(expect_alert)
+end

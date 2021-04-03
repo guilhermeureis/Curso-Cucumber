@@ -31,13 +31,16 @@ class MoviePage
          end
     end
 
+    def select_status(status)
+        find("input[placeholder=Status]").click
+        find(".el-select-dropdown__item", text: status).click
+    end
 
     def create(movie)
         # Titulo do filme
         find("input[name=title]").set movie["title"]
         # Status do Filme - Combobox com lista
-        find("input[placeholder=Status]").click
-        find(".el-select-dropdown__item", text: movie["status"]).click
+        select_status(movie['status']) unless movie['status'].empty?
         # Ano de Lançamento
         find("input[name=year]").set movie["year"]
         # Data de Estreia
@@ -46,7 +49,9 @@ class MoviePage
         add_cast(movie["cast"])
         # Descrição do Filme
         find("textarea[name=overview]").set movie["overview"]
-        upload(movie["cover"])
+        # Executa quando o movie["cover"] não estiver vazia - unless
+        # Executa quando o movie["cover"] estiver vazia - if
+        upload(movie["cover"]) unless movie["cover"].empty?
         sleep 1
         click_button "Cadastrar"
         sleep 1
@@ -54,5 +59,9 @@ class MoviePage
 
     def movie_tr(movie)
         find('table tbody tr', text: movie['title'])
+    end
+
+    def alert
+        find(".alert-info").text
     end
 end
