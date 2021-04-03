@@ -57,6 +57,6 @@ Funcionalidade: Cadastro de filmes
         Entao devo ver a notificação "Oops - Quase lá, só falta a data de estréia!"
 
     Cenario: Duplicado
-        Dado que "Deadpoll 2" já foi cadastrado
+        Dado que "Deadpool 2" já foi cadastrado
         Quando eu faço o cadastrado deste filme
         Entao devo ver a notificação "Oops - Este título já existe no Ninjaflix"

@@ -58,10 +58,11 @@ class MoviePage
     end
 
     def movie_tr(movie)
+        sleep 1
         find('table tbody tr', text: movie['title'])
     end
 
     def alert
-        find(".alert-info").text
+        find(".alert").text
     end
 end
