@@ -57,12 +57,34 @@ class MoviePage
         sleep 1
     end
 
-    def movie_tr(movie)
+    def movie_tr(title)
         sleep 1
-        find('table tbody tr', text: movie['title'])
+        find('table tbody tr', text: title)
     end
 
     def alert
         find(".alert").text
+    end
+
+    def remove(title)
+        movie_tr(title).find(".btn-trash").click
+    end
+
+    def swal2_confirm
+        find(".swal2-confirm").click
+    end
+
+    def swal2_cancel
+        find(".swal2-cancel").click
+    end
+
+    def has_no_movie(title)
+        # Perguntando se não contem o filme
+        page.has_no_css?('table tbody tr', text: title)
+    end
+
+    def has_movie(title)
+        # Perguntando não contem o filme
+        page.has_css?('table tbody tr', text: title)
     end
 end

@@ -29,7 +29,23 @@ deadpool2:
   release_date: "17/05/2018"
   cast: ["Ryan Reynolds","Josh Brolin","Morena Baccarin"]
   overview: "O supersoldado Cable vem do futuro com a missão de assassinar o jovem mutante Russel e o mercenário Deadpool precisa aprender o que é ser herói de verdade para salvá-lo."
-  cover: "deadpool2.jpg"
+  cover: "dp2.jpg"
+dbz:
+  title: "Dragon Ball Evolution"
+  status: "Disponível"
+  year: "2009"
+  release_date: "10/07/2009"
+  cast: []
+  overview: ""
+  cover: "dbz.jpg"
+10_coisas:
+  title: "10 coisas que eu odeio em você"
+  status: "Disponível"
+  year: "1999"
+  release_date: "31/03/1999"
+  cast: []
+  overview: ""
+  cover: "10_coisas.jpg"
 no_title:
   title: ""
   status: "Disponível"
