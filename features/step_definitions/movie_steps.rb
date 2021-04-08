@@ -9,7 +9,7 @@ end
   
 Quando('eu faço o cadastro deste filme') do
     @movie_page.add
-    @movie_page.create(@movie)
+    @movie_page.form.create(@movie)
 end
 
 Dado('este filme já existe no catálogo') do
@@ -23,7 +23,7 @@ Entao('devo ver o novo filme na lista') do
 end
 
 Entao('devo ver a notificação {string}') do |expect_alert|
-    expect(@movie_page.alert).to include(expect_alert)
+    expect(@movie_page.form.alert).to include(expect_alert)
 end
 
 Dado('que {string} está no catálogo') do |movie_code|
@@ -38,7 +38,7 @@ Quando('eu solicito a exclusão') do
 end
 
 Quando('eu confirmo a solicitação') do
-    @movie_page.swal2_confirm
+    @movie_page.sweet_alert.confirm
 end
 
 Entao('este item dever ser removido do catálogo') do
@@ -46,7 +46,7 @@ Entao('este item dever ser removido do catálogo') do
 end
 
 Quando('cancela a solicitação') do
-    @movie_page.swal2_cancel
+    @movie_page.sweet_alert.cancel
 end
   
 Entao('este item deve permanecer no catálogo') do
